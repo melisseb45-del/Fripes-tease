@@ -1,29 +1,184 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <title>Fripes-Tease</title>
-  <meta charset="utf-8">
- </head>
- <body>
-  
-<nav>
-  <ul>
-    <li><a href="#">Accueil</a></li>
-    <li><a href="#">Présentation</a></li>
-    <li><a href="#">Galerie</a></li>
-    <li><a href="#">Horaires & Lieu</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-  
-  <h1>Friperie associative créée par <mark style="background-color: pink;"> Laurelenn Leena Mélisse</mark></h1>
-  <p>Bienvenue !</p>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fripes-Tease | Friperie associative</title>
+  <style>
+    /* --- Styles généraux --- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fff8f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #b55b7c;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      background-color: #f9dbe0;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 20px;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #b55b7c;
+    }
+
+    /* --- Header --- */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #fde2e4, #fad2e1);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    /* --- Sections --- */
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #presentation {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 30px;
+    }
+
+    #galerie {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    #galerie img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    #galerie img:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Horaires & Lieu --- */
+    #infos {
+      background-color: #fef4f6;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #f9dbe0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    footer a {
+      color: #b55b7c;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#presentation">Présentation</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#infos">Horaires & Lieu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header id="accueil">
+    <h1>Fripes-Tease</h1>
+    <p>Friperie associative créée par <mark style="background-color: #ffd6e0;">Laurelenn, Leena & Mélisse</mark></p>
+    <p>🌿 Mode responsable • Solidaire • Vintage 🌸</p>
+  </header>
+
+  <!-- Présentation -->
   <section id="presentation">
-  <h2>À propos</h2>
-  <p>Notre friperie associative Fripes Tease propose des vêtements de seconde main accessibles à tous. 
-  L’objectif est de promouvoir une consommation responsable, solidaire et écologique.</p>
-</section>
+    <h2>À propos</h2>
+    <p>Notre friperie <strong>Fripes-Tease</strong> propose des vêtements de seconde main accessibles à tous. 
+      L’objectif est de promouvoir une <em>consommation responsable, solidaire et écologique</em>. 
+      Nous sélectionnons chaque pièce avec soin pour offrir une mode unique et engagée.</p>
+  </section>
 
+  <!-- Galerie -->
+  <section id="galerie">
+    <h2>Nos trouvailles</h2>
+    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" alt="Vêtements vintage">
+    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c" alt="Friperie">
+    <img src="https://images.unsplash.com/photo-1562158070-57d1b619103d" alt="Porte-vêtements coloré">
+  </section>
 
- </body>
+  <!-- Horaires & lieu -->
+  <section id="infos">
+    <h2>Horaires & Lieu</h2>
+    <p>📍 12 rue des Tissus, 63000 Clermont-Ferrand</p>
+    <p>🕓 Ouvert du mardi au samedi : 10h - 18h</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>💌 <a href="mailto:contact@fripes-tease.fr">contact@fripes-tease.fr</a></p>
+    <p>📱 Suivez-nous sur 
+      <a href="#">Instagram</a> • 
+      <a href="#">Facebook</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Fripes-Tease — Site réalisé avec amour par Laurelenn, Leena & Mélisse 💕</p>
+  </footer>
+
+</body>
 </html>
