@@ -4,127 +4,194 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fripes-Tease | Friperie associative</title>
+
+  <!-- Polices vintage -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rye&display=swap" rel="stylesheet">
+
   <style>
-    /* --- Styles généraux --- */
+    /* 🎨 Palette vintage 70s */
+    :root {
+      --beige: #f6f1e9;
+      --terracotta: #c97b63;
+      --olive: #7b8b69;
+      --choco: #4a3f35;
+      --cream: #fffaf2;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #fff8f7;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      color: #b55b7c;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      background-color: var(--beige);
+      color: var(--choco);
+      font-family: 'Playfair Display', serif;
+      line-height: 1.8;
     }
 
     /* --- Navigation --- */
     nav {
-      background-color: #f9dbe0;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: var(--olive);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.15);
     }
 
     nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
-      list-style: none;
-      margin: 0;
+      gap: 30px;
       padding: 0;
-    }
-
-    nav li {
-      margin: 0 20px;
+      margin: 0;
     }
 
     nav a {
-      font-weight: 600;
-      color: #333;
-      transition: color 0.3s;
+      color: var(--cream);
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #b55b7c;
+      color: var(--terracotta);
     }
 
     /* --- Header --- */
     header {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to right, #fde2e4, #fad2e1);
+      background: linear-gradient(180deg, #f6f1e9, #f0e3d0);
+      padding: 90px 20px 70px;
     }
 
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-family: 'Rye', cursive;
+      color: var(--terracotta);
+      font-size: 4em;
+      text-transform: uppercase;
+      margin-bottom: 0.3em;
+      letter-spacing: 3px;
     }
 
     header p {
-      font-size: 1.2em;
-      color: #555;
+      font-size: 1.3em;
+      color: var(--choco);
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    /* --- Sections --- */
+    mark {
+      background-color: var(--olive);
+      color: var(--cream);
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+
+    /* --- Section présentation --- */
     section {
-      padding: 50px 20px;
       max-width: 900px;
-      margin: auto;
+      margin: 70px auto;
+      padding: 40px 25px;
+      background-color: var(--cream);
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    #presentation {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      padding: 30px;
+    h2 {
+      font-family: 'Rye', cursive;
+      color: var(--olive);
+      font-size: 2.3em;
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
+    section p {
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    /* --- Galerie rétro --- */
     #galerie {
+      background-color: var(--beige);
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-top: 30px;
     }
 
-    #galerie img {
+    .grid img {
       width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      filter: sepia(30%) contrast(90%) brightness(95%);
+      transition: 0.4s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
-    #galerie img:hover {
-      transform: scale(1.05);
+    .grid img:hover {
+      filter: sepia(10%) contrast(100%) brightness(100%);
+      transform: scale(1.03);
     }
 
     /* --- Horaires & Lieu --- */
     #infos {
-      background-color: #fef4f6;
-      border-radius: 10px;
-      padding: 30px;
+      background-color: var(--olive);
+      color: var(--cream);
       text-align: center;
+      padding: 60px 20px;
+      border-radius: 16px;
+      max-width: 900px;
+      margin: 70px auto;
+    }
+
+    #infos h2 {
+      color: var(--cream);
+    }
+
+    /* --- Contact --- */
+    #contact {
+      text-align: center;
+    }
+
+    #contact a {
+      color: var(--terracotta);
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    #contact a:hover {
+      border-color: var(--terracotta);
     }
 
     /* --- Footer --- */
     footer {
-      background-color: #f9dbe0;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #555;
+      background-color: var(--choco);
+      color: var(--cream);
+      padding: 25px;
+      font-size: 0.95em;
+      letter-spacing: 1px;
     }
 
-    footer a {
-      color: #b55b7c;
-      font-weight: 600;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.8em;
+      }
+      nav ul {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="#accueil">Accueil</a></li>
@@ -135,37 +202,34 @@
     </ul>
   </nav>
 
-  <!-- Header -->
   <header id="accueil">
     <h1>Fripes-Tease</h1>
-    <p>Friperie associative créée par <mark style="background-color: #ffd6e0;">Laurelenn, Leena & Mélisse</mark></p>
-    <p>🌿 Mode responsable • Solidaire • Vintage 🌸</p>
+    <p>Friperie associative créée par <mark>Laurelenn, Leena & Mélisse</mark></p>
+    <p>🌻 Une mode vintage, responsable et pleine de bonnes ondes 🌸</p>
   </header>
 
-  <!-- Présentation -->
   <section id="presentation">
     <h2>À propos</h2>
-    <p>Notre friperie <strong>Fripes-Tease</strong> propose des vêtements de seconde main accessibles à tous. 
-      L’objectif est de promouvoir une <em>consommation responsable, solidaire et écologique</em>. 
-      Nous sélectionnons chaque pièce avec soin pour offrir une mode unique et engagée.</p>
+    <p><strong>Fripes-Tease</strong> est une friperie associative née d’une passion commune pour le vintage, le style et l’écologie.  
+    Nous croyons que chaque vêtement a une âme, et qu’il mérite une seconde vie.  
+    Chez nous, on chine, on partage, on rit — et on s’habille avec conscience et créativité. 🌿</p>
   </section>
 
-  <!-- Galerie -->
   <section id="galerie">
-    <h2>Nos trouvailles</h2>
-    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" alt="Vêtements vintage">
-    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c" alt="Friperie">
-    <img src="https://images.unsplash.com/photo-1562158070-57d1b619103d" alt="Porte-vêtements coloré">
+    <h2>Nos trouvailles rétro</h2>
+    <div class="grid">
+      <img src="https://images.unsplash.com/photo-1604335399105-1d0e9216d8a5" alt="Veste vintage">
+      <img src="https://images.unsplash.com/photo-1576566588028-4e0de2c14e69" alt="Boutique rétro">
+      <img src="https://images.unsplash.com/photo-1580910051073-6b2248b01a5f" alt="Cintres vintage">
+    </div>
   </section>
 
-  <!-- Horaires & lieu -->
   <section id="infos">
     <h2>Horaires & Lieu</h2>
     <p>📍 12 rue des Tissus, 63000 Clermont-Ferrand</p>
-    <p>🕓 Ouvert du mardi au samedi : 10h - 18h</p>
+    <p>🕓 Mardi – Samedi : 10h à 18h</p>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>💌 <a href="mailto:contact@fripes-tease.fr">contact@fripes-tease.fr</a></p>
@@ -175,9 +239,8 @@
     </p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 Fripes-Tease — Site réalisé avec amour par Laurelenn, Leena & Mélisse 💕</p>
+    <p>© 2025 Fripes-Tease — Vintage, amour & partage 🌼</p>
   </footer>
 
 </body>
