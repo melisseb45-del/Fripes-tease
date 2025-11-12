@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fripes-Tease | Une Friperie associative !</title>
+
+<!-- Polices Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+/* Variables de couleurs vintage années 70 */
+:root {
+--orange-vintage: #e67e22;
+--orange-brule: #d35400;
+--jaune-moutarde: #d4a017;
+--marron: #8b4513;
+--marron-fonce: #5c2e0a;
+--creme: #fff8dc;
+--beige-clair: #f5deb3;
+--rose-vintage: #ff6b9d;
+--vert-seventies: #7cb342;
+--turquoise: #26c6da;
+}
+
+/* Reset de base */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Body avec motif vintage */
+body {
+font-family: 'Courier Prime', monospace;
+background: linear-gradient(135deg, var(--beige-clair) 0%, var(--creme) 100%);
+background-attachment: fixed;
+color: var(--marron-fonce);
+line-height: 1.8;
+}
+
+/* Navigation stylée */
+nav {
+background: linear-gradient(90deg, var(--orange-vintage), var(--rose-vintage), var(--orange-brule));
+padding: 18px 0;
+position: sticky;
+top: 0;
+z-index: 10;
+box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+border-bottom: 4px solid var(--jaune-moutarde);
+}
+
+nav ul {
+list-style: none;
+display: flex;
+justify-content: center;
+gap: 40px;
+padding: 0;
+margin: 0;
+flex-wrap: wrap;
+}
+
+nav a {
+color: var(--creme);
+font-weight: bold;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 3px;
+transition: all 0.4s ease;
+font-family: 'Bebas Neue', sans-serif;
+font-size: 1.2em;
+padding: 8px 16px;
+border-radius: 25px;
+position: relative;
+overflow: hidden;
+}
+
+nav a::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.2);
+transition: 0.4s;
+z-index: -1;
+}
+
+nav a:hover::before {
+left: 0;
+}
+
+nav a:hover {
+color: var(--jaune-moutarde);
+text-shadow: 0 0 15px rgba(212, 160, 23, 0.8);
+transform: scale(1.1) rotate(-2deg);
+background: rgba(255, 255, 255, 0.1);
+}
+
+/* Header avec animations */
+header {
+text-align: center;
+background: linear-gradient(180deg, var(--creme), var(--beige-clair), var(--turquoise));
+padding: 120px 20px 90px;
+border-bottom: 8px solid var(--orange-vintage);
+position: relative;
+overflow: hidden;
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+}
+
+header h1 {
+font-family: 'Righteous', cursive;
+color: var(--orange-brule);
+font-size: 5em;
+text-transform: uppercase;
+margin-bottom: 0.3em;
+letter-spacing: 8px;
+text-shadow:
+4px 4px 0 var(--marron),
+6px 6px 0 var(--jaune-moutarde);
+animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+from {
+opacity: 0;
+transform: translateY(-50px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+header p {
+font-size: 1.4em;
+color: var(--marron);
+max-width: 800px;
+margin: 20px auto;
+font-family: 'Courier Prime', monospace;
+font-weight: 700;
+line-height: 1.6;
+}
+
+mark {
+background: linear-gradient(120deg, var(--orange-vintage), var(--rose-vintage));
+color: var(--creme);
+padding: 6px 16px;
+border-radius: 20px;
+font-weight: bold;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+font-family: 'Pacifico', cursive;
+font-size: 1.1em;
+}
+
+/* Sections avec effets */
+section {
+max-width: 950px;
+margin: 80px auto;
+padding: 50px 35px;
+background: linear-gradient(135deg, var(--creme) 0%, white 100%);
+border-radius: 20px;
+box-shadow:
+0 10px 30px rgba(0,0,0,0.2),
+0 0 0 5px var(--orange-vintage);
+border: 3px solid var(--orange-vintage);
+position: relative;
+transition: transform 0.3s ease;
+}
+
+section:hover {
+transform: translateY(-5px);
+box-shadow:
+0 15px 40px rgba(0,0,0,0.3),
+0 0 0 5px var(--orange-vintage);
+}
+
+section::before {
+content: '';
+position: absolute;
+top: -10px;
+left: -10px;
+right: -10px;
+bottom: -10px;
+background: linear-gradient(45deg, var(--rose-vintage), var(--turquoise), var(--jaune-moutarde));
+border-radius: 20px;
+z-index: -1;
+opacity: 0;
+transition: 0.3s;
+}
+
+section:hover::before {
+opacity: 0.3;
+}
+
+h2 {
+font-family: 'Bebas Neue', sans-serif;
+color: var(--orange-brule);
+font-size: 3.2em;
+text-align: center;
+margin-bottom: 35px;
+text-transform: uppercase;
+letter-spacing: 4px;
+text-shadow:
+3px 3px 0 var(--jaune-moutarde),
+6px 6px 0 rgba(0,0,0,0.1);
+position: relative;
+padding-bottom: 20px;
+}
+
+h2::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 150px;
+height: 4px;
+background: linear-gradient(90deg, var(--rose-vintage), var(--orange-vintage), var(--rose-vintage));
+border-radius: 2px;
+}
+
+section p {
+font-size: 1.2em;
+text-align: center;
+color: var(--marron-fonce);
+line-height: 2;
+margin: 20px 0;
+}
+
+section p strong {
+color: var(--orange-brule);
+font-size: 1.1em;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Galerie améliorée */
+#galerie {
+background: linear-gradient(135deg, var(--beige-clair) 0%, var(--turquoise) 100%);
+border: 5px solid var(--marron);
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+margin-top: 40px;
+}
+
+.grid img {
+width: 100%;
+height: 320px;
+object-fit: cover;
+border-radius: 15px;
+filter: sepia(40%) saturate(130%) contrast(100%) brightness(105%);
+transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+box-shadow:
+0 5px 15px rgba(0,0,0,0.3),
+0 0 0 6px var(--orange-vintage);
+border: 4px solid var(--creme);
+cursor: pointer;
+}
+
+/* Horaires & Lieu stylisé */
+#infos {
+background: linear-gradient(135deg, var(--marron) 0%, var(--marron-fonce) 50%, var(--orange-brule) 100%);
+color: var(--creme);
+text-align: center;
+padding: 70px 30px;
+border-radius: 20px;
+max-width: 950px;
+margin: 80px auto;
+border: 6px solid var(--jaune-moutarde);
+box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+position: relative;
+}
+
+#infos::before {
+content: '📍';
+position: absolute;
+top: 20px;
+left: 30px;
+font-size: 3em;
+opacity: 0.4;
+}
+
+
+
+<p>Friperie associative créée par <mark>Wafaa Bahaj & Johnny Poulain</mark></p>
+<p>Une mode vintage, responsable et pleine de bonnes ondes</p>
+</header>
+
+<!-- Section présentation -->
+<section id="presentation">
+<h2>À propos</h2>
+<p>
+<strong>Fripes-Tease</strong> est une friperie associative née d'une passion commune pour le vintage, le style et l'écologie.
+</p>
+<p>
+Nous croyons que chaque vêtement a une âme, et qu'il mérite une seconde vie.
+</p>
+<p>
+Chez nous, on chine, on partage, on rit et on s'habille avec une conscience de l'écologie et de la créativité.
+</p>
+</section>
+
+<!-- Section galerie -->
+<section id="galerie">
+<h2>Nos trouvailles rétro</h2>
+<div class="grid">
+<img src="fripestease.jpg" alt="Vêtements vintage suspendus">
+<img src="https://share.google/images/sW8wxl8AYLjccuuCK" alt="Boutique rétro avec néons">
+<img src="https://share.google/images/FTVJDC3D5VEpD23Nc">
+</div>
+</section>
+
+<!-- Section horaires & lieu -->
+<section id="infos">
+<h2>Horaires & Lieu</h2>
+<p>48 rue Auguste Poullain, Saint-Denis 93300</p>
+<p>Mardi – Samedi : 13h30 à 19h30</p>
+</section>
+
+<!-- Section contact -->
+<section id="contact">
+<h2>Contact</h2>
+<p>
+<a href="mailto:contact@fripes-tease.fr" title="Envoyez-nous un email">📧 contact@fripes-tease.fr</a>
+</p>
+<p>
+Suivez-nous sur<br>
+<a href="https://instagram.com" title="Notre page Instagram" target="https://share.google/AVQvCtbZ8rVgQUEEn">Instagram</a> •
+<a href="https://facebook.com" title="Notre page Facebook" target="https://share.google/OabOWz3FU3J5vhYCJ">Facebook</a>
+</p>
+</section>
+
+<!-- Footer (pied de page) -->
+<footer>
+<p>2025 Fripes-Tease</p>
+</footer>
+
+</body>
+</html>
