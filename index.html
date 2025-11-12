@@ -5,35 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fripes-Tease | Friperie associative !</title>
 
-  <!-- Polices vintage -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rye&display=swap" rel="stylesheet">
+  <!-- Polices vintage années 70 -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
 
   <style>
-    /*  Palette vintage 70s */
+    /*  Palette vintage 70s - Orange, Marron, Beige */
     :root {
-      --beige: #f6f1e9;
-      --terracotta: #c97b63;
-      --olive: #7b8b69;
-      --choco: #4a3f35;
-      --cream: #fffaf2;
+      --beige-clair: #f5e6d3;
+      --orange-vintage: #e67e22;
+      --orange-brule: #d35400;
+      --marron: #6b4423;
+      --marron-fonce: #3e2723;
+      --creme: #fff8e7;
+      --jaune-moutarde: #d4a017;
     }
 
     body {
       margin: 0;
-      background-color: var(--beige);
-      color: var(--choco);
-      font-family: 'Playfair Display', serif;
+      background-color: var(--beige-clair);
+      color: var(--marron-fonce);
+      font-family: 'Courier Prime', monospace;
       line-height: 1.8;
     }
 
     /* --- Navigation --- */
     nav {
-      background-color: var(--olive);
+      background: linear-gradient(90deg, var(--orange-vintage), var(--orange-brule));
       padding: 14px 0;
       position: sticky;
       top: 0;
       z-index: 10;
-      box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     nav ul {
@@ -46,46 +48,53 @@
     }
 
     nav a {
-      color: var(--cream);
+      color: var(--creme);
       font-weight: bold;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       transition: 0.3s;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1em;
     }
 
     nav a:hover {
-      color: var(--terracotta);
+      color: var(--jaune-moutarde);
+      text-shadow: 0 0 10px rgba(212, 160, 23, 0.6);
     }
 
     /* --- Header --- */
     header {
       text-align: center;
-      background: linear-gradient(180deg, #f6f1e9, #f0e3d0);
+      background: linear-gradient(180deg, var(--creme), var(--beige-clair));
       padding: 90px 20px 70px;
+      border-bottom: 5px solid var(--orange-vintage);
     }
 
     header h1 {
-      font-family: 'Rye', cursive;
-      color: var(--terracotta);
-      font-size: 4em;
+      font-family: 'Righteous', cursive;
+      color: var(--orange-brule);
+      font-size: 4.5em;
       text-transform: uppercase;
       margin-bottom: 0.3em;
-      letter-spacing: 3px;
+      letter-spacing: 5px;
+      text-shadow: 3px 3px 0 var(--marron);
     }
 
     header p {
       font-size: 1.3em;
-      color: var(--choco);
+      color: var(--marron);
       max-width: 700px;
-      margin: 0 auto;
+      margin: 15px auto;
+      font-family: 'Courier Prime', monospace;
     }
 
     mark {
-      background-color: var(--olive);
-      color: var(--cream);
-      padding: 3px 8px;
-      border-radius: 5px;
+      background-color: var(--orange-vintage);
+      color: var(--creme);
+      padding: 4px 12px;
+      border-radius: 3px;
+      font-weight: bold;
     }
 
     /* --- Section présentation --- */
@@ -93,19 +102,21 @@
       max-width: 900px;
       margin: 70px auto;
       padding: 40px 25px;
-      background-color: var(--cream);
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: var(--creme);
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      border: 3px solid var(--orange-vintage);
     }
 
     h2 {
-      font-family: 'Rye', cursive;
-      color: var(--olive);
-      font-size: 2.3em;
+      font-family: 'Bebas Neue', sans-serif;
+      color: var(--orange-brule);
+      font-size: 2.8em;
       text-align: center;
       margin-bottom: 30px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 0 var(--jaune-moutarde);
     }
 
     section p {
@@ -115,7 +126,8 @@
 
     /* --- Galerie rétro --- */
     #galerie {
-      background-color: var(--beige);
+      background-color: var(--beige-clair);
+      border: 3px solid var(--marron);
     }
 
     .grid {
@@ -127,39 +139,50 @@
 
     .grid img {
       width: 100%;
-      border-radius: 12px;
-      filter: sepia(30%) contrast(90%) brightness(95%);
+      border-radius: 8px;
+      filter: sepia(40%) saturate(120%) contrast(95%);
       transition: 0.4s;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 4px solid var(--orange-vintage);
     }
 
     .grid img:hover {
-      filter: sepia(10%) contrast(100%) brightness(100%);
-      transform: scale(1.03);
+      filter: sepia(20%) saturate(130%) contrast(100%);
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
     }
 
     /* --- Horaires & Lieu --- */
     #infos {
-      background-color: var(--olive);
-      color: var(--cream);
+      background: linear-gradient(135deg, var(--marron), var(--marron-fonce));
+      color: var(--creme);
       text-align: center;
       padding: 60px 20px;
-      border-radius: 16px;
+      border-radius: 8px;
       max-width: 900px;
       margin: 70px auto;
+      border: 4px solid var(--orange-vintage);
     }
 
     #infos h2 {
-      color: var(--cream);
+      color: var(--jaune-moutarde);
+      text-shadow: 2px 2px 0 var(--marron-fonce);
+    }
+
+    #infos p {
+      font-size: 1.2em;
+      font-weight: bold;
     }
 
     /* --- Contact --- */
     #contact {
       text-align: center;
+      background-color: var(--creme);
+      border: 3px solid var(--orange-brule);
     }
 
     #contact a {
-      color: var(--terracotta);
+      color: var(--orange-brule);
       font-weight: bold;
       text-decoration: none;
       border-bottom: 2px solid transparent;
@@ -167,17 +190,20 @@
     }
 
     #contact a:hover {
-      border-color: var(--terracotta);
+      border-color: var(--orange-brule);
+      color: var(--marron-fonce);
     }
 
     /* --- Footer --- */
     footer {
       text-align: center;
-      background-color: var(--choco);
-      color: var(--cream);
-      padding: 25px;
-      font-size: 0.95em;
-      letter-spacing: 1px;
+      background: linear-gradient(90deg, var(--marron-fonce), var(--marron));
+      color: var(--creme);
+      padding: 30px;
+      font-size: 1em;
+      letter-spacing: 2px;
+      font-family: 'Bebas Neue', sans-serif;
+      border-top: 5px solid var(--orange-vintage);
     }
 
     @media (max-width: 600px) {
@@ -186,6 +212,7 @@
       }
       nav ul {
         flex-direction: column;
+        gap: 15px;
       }
     }
   </style>
@@ -205,14 +232,14 @@
   <header id="accueil">
     <h1>Fripes-Tease</h1>
     <p>Friperie associative créée par <mark>Laurelenn, Leena & Mélisse</mark></p>
-    <p> Une mode vintage, responsable et pleine de bonnes ondes </p>
+    <p>Une mode vintage, responsable et pleine de bonnes ondes</p>
   </header>
 
   <section id="presentation">
     <h2>À propos</h2>
-    <p><strong>Fripes-Tease</strong> est une friperie associative née d’une passion commune pour le vintage, le style et l’écologie.  
-    Nous croyons que chaque vêtement a une âme, et qu’il mérite une seconde vie.  
-    Chez nous, on chine, on partage, on rit — et on s’habille avec conscience et créativité. </p>
+    <p><strong>Fripes-Tease</strong> est une friperie associative née d'une passion commune pour le vintage, le style et l'écologie.  
+    Nous croyons que chaque vêtement a une âme, et qu'il mérite une seconde vie.  
+    Chez nous, on chine, on partage, on rit — et on s'habille avec conscience et créativité. </p>
   </section>
 
   <section id="galerie">
@@ -226,21 +253,21 @@
 
   <section id="infos">
     <h2>Horaires & Lieu</h2>
-    <p> 12 rue Saint Honoré, 75001</p>
-    <p> Mardi – Samedi : 10h à 18h</p>
+    <p>12 rue Saint Honoré, 75001</p>
+    <p>Mardi – Samedi : 10h à 18h</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p> <a href="mailto:contact@fripes-tease.fr">contact@fripes-tease.fr</a></p>
-    <p> Suivez-nous sur 
+    <p><a href="mailto:contact@fripes-tease.fr">contact@fripes-tease.fr</a></p>
+    <p>Suivez-nous sur 
       <a href="#">Instagram</a> • 
       <a href="#">Facebook</a>
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Fripes-Tease — Vintage</p>
+    <p>© 2025 Fripes-Tease — Vintage avec amour </p>
   </footer>
 
 </body>
