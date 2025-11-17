@@ -203,6 +203,14 @@
       border-top: 6px solid var(--jaune-moutarde);
     }
 
+img {
+    max-width: 500px;   /* largeur maximale */
+    width: 100%;        /* s'adapte aux petits écrans */
+    height: auto;       /* garde les proportions */
+    display: block;     
+    margin: 20px auto;  /* centre l'image avec un peu d'espace */
+    border-radius: 10px; /* optionnel */
+}
     </style>
 </head>
 
