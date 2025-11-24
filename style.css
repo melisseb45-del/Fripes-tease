@@ -29,8 +29,9 @@
     }
 
     /* Navigation stylée */
-    nav {
-      background: linear-gradient(90deg, var(--orange-vintage), var(--rose-vintage), var(--orange-brule));
+ 
+     nav {
+  background: var(--orange-vintage);
       padding: 18px 0;
       position: sticky;
       top: 0;
@@ -90,7 +91,7 @@
     /* Header avec animations */
     header {
       text-align: center;
-      background: linear-gradient(180deg, var(--creme), var(--beige-clair), var(--turquoise));
+      background: var(--creme);
       padding: 120px 20px 90px;
       border-bottom: 8px solid var(--orange-vintage);
       position: relative;
@@ -137,7 +138,7 @@
     }
 
     mark {
-      background: linear-gradient(120deg, var(--orange-vintage), var(--rose-vintage));
+      background: var(--orange-vintage);
       color: var(--creme);
       padding: 6px 16px;
       border-radius: 20px;
@@ -176,7 +177,7 @@
       left: -10px;
       right: -10px;
       bottom: -10px;
-      background: linear-gradient(45deg, var(--rose-vintage), var(--turquoise), var(--jaune-moutarde));
+      background: none;
       border-radius: 20px;
       z-index: -1;
       opacity: 0;
@@ -210,7 +211,7 @@
       transform: translateX(-50%);
       width: 150px;
       height: 4px;
-      background: linear-gradient(90deg, var(--rose-vintage), var(--orange-vintage), var(--rose-vintage));
+      background: var(--orange-vintage);
       border-radius: 2px;
     }
 
@@ -230,7 +231,7 @@
 
     /* Galerie améliorée */
     #galerie {
-      background: linear-gradient(135deg, var(--beige-clair) 0%, var(--turquoise) 100%);
+      background: var(--beige-clair);
       border: 5px solid var(--marron);
     }
 
@@ -257,7 +258,7 @@
 
     /* Horaires & Lieu stylisé */
     #infos {
-      background: linear-gradient(135deg, var(--marron) 0%, var(--marron-fonce) 50%, var(--orange-brule) 100%);
+      background: var(--marron);
       color: var(--creme);
       text-align: center;
       padding: 70px 30px;
@@ -300,7 +301,7 @@
     /* Contact avec liens colorés */
     #contact {
       text-align: center;
-      background: linear-gradient(135deg, var(--creme) 0%, var(--beige-clair) 50%, var(--rose-vintage) 100%);
+      background: var(--creme);
       border: 5px solid var(--orange-brule);
     }
 
@@ -368,7 +369,7 @@
     /* Footer stylisé */
     footer {
       text-align: center;
-      background: linear-gradient(90deg, var(--marron-fonce) 0%, var(--marron) 50%, var(--orange-brule) 100%);
+      background: var(--marron-fonce);
       color: var(--creme);
       padding: 40px;
       font-size: 1.2em;
