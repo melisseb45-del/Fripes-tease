@@ -4,27 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fripes-Tease | Une Friperie associative !</title>
-<link rel="stylesheet" type="text/css" href="style.css" >
-  
+  <link rel="stylesheet" type="text/css" href="style.css">
+
   <!-- Polices Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-  </head>
 
-  <body>
+  <!-- Leaflet (Carte interactive) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    /* Style de la carte */
+    #map {
+      height: 300px;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
   <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="#accueil" title="Retour à l'accueil">Accueil</a></li>
       <li><a href="#presentation" title="Découvrez notre histoire">Présentation</a></li>
-          <a href="pageprésentation.html"> + </a>
+      <a href="pageprésentation.html"> + </a>
       <li><a href="#galerie" title="Nos plus belles pièces">Galerie</a></li>
-<li>
-  <a href="https://drive.google.com/file/d/1fnFTBVPaK0OR_Ki0leB_cRRNuE07Cl0T/view?usp=drivesdk" 
-     title="Voir le portfolio"
-     class="portfolio-link">Portfolio +</a>
-</li>
-       <li><a href="#actualité" title="Retour à l'actualité du mois">Actualité</a></li>
-       <a href="actualité.html"> + </a>
+      <li>
+        <a href="https://drive.google.com/file/d/1fnFTBVPaK0OR_Ki0leB_cRRNuE07Cl0T/view?usp=drivesdk" 
+          title="Voir le portfolio"
+          class="portfolio-link">Portfolio +</a>
+      </li>
+      <li><a href="#actualité" title="Retour à l'actualité du mois">Actualité</a></li>
+      <a href="actualité.html"> + </a>
       <li><a href="#infos" title="Venez nous voir">Horaires & Lieu</a></li>
       <li><a href="#contact" title="Contactez-nous">Contact</a></li>
     </ul>
@@ -33,22 +49,16 @@
   <!-- Header (en-tête) -->
   <header id="accueil">
     <h1>Fripes-Tease</h1>
-    <p>Friperie associative créée par <mark>Wafaa & Johnny </mark></p>
+    <p>Friperie associative créée par <mark>Wafaa & Johnny</mark></p>
     <p>Une mode vintage, responsable et pleine de bonnes ondes</p>
   </header>
 
   <!-- Section présentation -->
   <section id="presentation">
     <h2>À propos</h2>
-    <p>
-      <strong>Fripes-Tease</strong> est une friperie associative née d'une passion commune pour le vintage, le style et l'écologie.
-    </p>
-    <p>
-      Nous croyons que chaque vêtement a une âme, et qu'il mérite une seconde vie.
-    </p>
-    <p>
-      Chez nous, on chine, on partage, on rit et on s'habille avec une conscience de l'écologie et de la créativité.
-    </p>
+    <p><strong>Fripes-Tease</strong> est une friperie associative née d'une passion commune pour le vintage, le style et l'écologie.</p>
+    <p>Nous croyons que chaque vêtement a une âme, et qu'il mérite une seconde vie.</p>
+    <p>Chez nous, on chine, on partage, on rit et on s'habille avec une conscience de l'écologie et de la créativité.</p>
   </section>
 
   <!-- Section galerie -->
@@ -57,7 +67,7 @@
     <div class="grid">
       <img src="top.jpg" alt="Vêtements vintage suspendus">
       <img src="manteau.jpg" alt="Boutique rétro avec néons">
-      <img src="veste.jpg">
+      <img src="veste.jpg" alt="Veste vintage">
     </div>
   </section>
 
@@ -66,28 +76,52 @@
     <h2>Horaires & Lieu</h2>
     <p>48 rue Auguste Poullain, Saint-Denis 93300</p>
     <p>Mardi – Samedi : 13h30 à 19h30</p>
-     <div class="grid">
-      <img src="carte.jpg">
-    </div>
+
+    <!-- Carte interactive -->
+    <div id="map"></div>
+
   </section>
 
   <!-- Section contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>
-      <a href="mailto:fripes.tease.asso@gmail.com" title="Envoyez-nous un email">📧 fripes.tease.asso@gmail.com</a>
+      <a href="mailto:fripes.tease.asso@gmail.com" title="Envoyez-nous un email">
+        📧 fripes.tease.asso@gmail.com
+      </a>
     </p>
     <p>
       Suivez-nous sur<br>
-      <a href="https://instagram.com" title="Notre page Instagram" target="https://share.google/2diYvFGclpfAyLAeR">Instagram</a> • 
-      <a href="https://facebook.com" title="Notre page Facebook" target="https://share.google/Qco5vnz8AFgYmJQvs">Facebook</a>
+      <a href="https://instagram.com" title="Notre page Instagram">Instagram</a> • 
+      <a href="https://facebook.com" title="Notre page Facebook">Facebook</a>
     </p>
   </section>
 
-  <!-- Footer (pied de page) -->
+  <!-- Footer -->
   <footer>
     <p>2025 Fripes-Tease</p>
   </footer>
+
+
+  <!-- Script Leaflet (affichage de la carte + point rouge) -->
+  <script>
+    // Coordonnées de la friperie
+    var latitude = 48.936210;
+    var longitude = 2.357490;
+
+    // Initialisation
+    var map = L.map('map').setView([latitude, longitude], 16);
+
+    // Fond OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Marqueur rouge
+    var marker = L.marker([latitude, longitude]).addTo(map);
+
+    marker.bindPopup("Fripes-Tease<br>48 rue Auguste Poullain, Saint-Denis").openPopup();
+  </script>
 
 </body>
 </html>
