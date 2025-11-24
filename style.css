@@ -439,3 +439,60 @@
         font-size: 1em;
       }
     }
+/* ----- PAGE ANNEXE : PRESENTATION / NOTRE HISTOIRE ----- */
+
+.page-presentation {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, var(--creme), var(--beige-clair));
+  border-radius: 20px;
+  border: 4px solid var(--orange-vintage);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  font-family: 'Courier Prime', monospace;
+  color: var(--marron-fonce);
+  line-height: 1.8;
+}
+
+/* Titre principal */
+.page-presentation h1 {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  font-size: 4em;
+  color: var(--orange-brule);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-shadow: 
+      4px 4px 0 var(--marron),
+      6px 6px 0 var(--jaune-moutarde);
+}
+
+/* Paragraphes */
+.page-presentation p {
+  font-size: 1.3em;
+  margin: 25px 0;
+  text-align: justify;
+  color: var(--marron);
+}
+
+.page-presentation p:first-of-type {
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .page-presentation {
+    margin: 40px 20px;
+    padding: 25px;
+  }
+
+  .page-presentation h1 {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+  }
+
+  .page-presentation p {
+    font-size: 1.1em;
+  }
+}
