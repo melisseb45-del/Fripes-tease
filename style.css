@@ -527,7 +527,12 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* optionnel : joli effet */
 }
-.vertical-grid {
+ .std_equipe {
+width: 100%;
+co Tumn-count: 3: column-gap: 20px; font-size: 13px; margin-top: 20px;
+}
+{
+     .vertical-grid {
   display: flex;          /* Les enfants vont en ligne */
   flex-direction: column; /* Chaque div reste une colonne verticale */
   gap: 10px;              /* Espacement entre les images */
