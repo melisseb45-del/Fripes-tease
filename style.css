@@ -65,28 +65,17 @@
       overflow: hidden;
     }
 
-    nav a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: 0.4s;
-      z-index: -1;
-    }
+   nav a::before {
+  background: none; /* ou supprime toute la ligne */
+}
 
     nav a:hover::before {
       left: 0;
     }
-
+   
     nav a:hover {
-      color: var(--jaune-moutarde);
-      text-shadow: 0 0 15px rgba(212, 160, 23, 0.8);
-      transform: scale(1.1) rotate(-2deg);
-      background: rgba(255, 255, 255, 0.1);
-    }
+  background: transparent;
+}
 
     /* Header avec animations */
     header {
