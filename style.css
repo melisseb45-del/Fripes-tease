@@ -522,7 +522,7 @@
 
 /* Taille des images beaucoup plus petite */
 .vertical-grid img {
-  width: 150px;      
+  width: 200px;      
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* optionnel : joli effet */
