@@ -522,17 +522,13 @@
 
 /* Taille des images beaucoup plus petite */
 .vertical-grid img {
-  width: 250px;      
+  width: 200px;      
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* optionnel : joli effet */
 }
- .std_equipe {
-width: 100%;
-co Tumn-count: 3: column-gap: 20px; font-size: 13px; margin-top: 20px;
-}
 {
-     .vertical-grid {
+.vertical-grid {
   display: flex;          /* Les enfants vont en ligne */
   flex-direction: column; /* Chaque div reste une colonne verticale */
   gap: 10px;              /* Espacement entre les images */
