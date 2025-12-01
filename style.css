@@ -538,4 +538,83 @@
 .grid-container {
   display: flex;          /* Les vertical-grid seront côte à côte */
   gap: 20px;              /* Espacement entre les colonnes */
+
+
 }
+
+.bibliographie-wrapper {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 60px 50px;
+  background: linear-gradient(135deg, var(--creme), var(--beige-clair));
+  border-radius: 25px;
+  border: 5px solid var(--orange-vintage);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25),
+    0 0 0 8px var(--jaune-moutarde);
+  position: relative;
+}
+
+/* Petit motif décoratif seventies */
+.bibliographie-wrapper::before {
+  content: "✿";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3em;
+  color: var(--orange-vintage);
+  background: var(--creme);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 4px solid var(--orange-brule);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Titre principal */
+.bibliographien-wrapper h1 {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  font-size: 4.5em;
+  color: var(--orange-brule);
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  text-shadow:
+    4px 4px 0 var(--marron),
+    6px 6px 0 var(--jaune-moutarde);
+}
+
+/* Paragraphes */
+.bibliographie-wrapper p {
+  font-size: 1.3em;
+  margin: 25px 0;
+  color: var(--marron-fonce);
+  font-family: 'Courier Prime', monospace;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+/* Mise en valeur légère des premiers mots */
+.bibliographie-wrapper p::first-letter {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: var(--orange-vintage);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bibliographie-wrapper {
+    margin: 50px 20px;
+    padding: 35px 25px;
+  }
+
+  .bibliographie-wrapper h1 {
+    font-size: 3em;
+    letter-spacing: 4px;
+  }
+    
+  .bibliographie-wrapper p {
+    font-size: 1.1em;
+  }
+
