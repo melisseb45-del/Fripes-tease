@@ -507,6 +507,7 @@
   }
 }
     /* Style de la carte */
+#map { height: 180px; }
     #map {
       height: 300px;
       width: 100%;
