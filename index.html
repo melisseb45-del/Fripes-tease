@@ -2,13 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-   <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+  <!-- Mon code pour placer la fac sur la carte -->
+    <script src="leaflet.js"></script>
+    <!-- Le code JS de leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" 
+    	      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fripes-Tease | Une Friperie associative !</title>
@@ -17,13 +15,13 @@
   <!-- Polices Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 
-  <!-- Leaflet (Carte interactive) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
 </head>
 
-<body>
+<!-- j'indique que quand le body se charge 
+	 on lance la fonction loadLeafletMap() qui est dans le fichier "mespetitesfonctions.js" -->
+<body onload="javascript:loadLeafletMap();">
+
+<div id="map" class="leaflet-container"></div>
 
   <!-- Navigation -->
   <nav>
