@@ -2,12 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- Mon code pour placer la fac sur la carte -->
+   <!-- Mon code pour placer la fac sur la carte -->
     <script src="leaflet.js"></script>
     <!-- Le code JS de leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" 
     	      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fripes-Tease | Une Friperie associative !</title>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,12 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 
 </head>
-
-<!-- j'indique que quand le body se charge 
-	 on lance la fonction loadLeafletMap() qui est dans le fichier "mespetitesfonctions.js" -->
-<body onload="javascript:loadLeafletMap();">
-
-<div id="map" class="leaflet-container"></div>
 
   <!-- Navigation -->
   <nav>
@@ -66,7 +59,11 @@
     <p>Mardi – Samedi : 13h30 à 19h30</p>
 
     <!-- Carte interactive -->
-    <div id="map"></div>
+    <!-- j'indique que quand le body se charge 
+	 on lance la fonction loadLeafletMap() qui est dans le fichier "mespetitesfonctions.js" -->
+<body onload="javascript:loadLeafletMap();">
+
+<div id="map" class="leaflet-container"></div>
 
   </section>
 
